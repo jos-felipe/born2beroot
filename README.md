@@ -544,7 +544,7 @@ Create WordPress configuration file from its sample via `sudo cp /var/www/html/w
 ```
 $ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 ```
-Configure WordPress to reference previously-created MariaDB database & user via `sudo vi /var/www/html/wp-config.php`.
+Configure WordPress to reference previously-created MariaDB database & user and to be able to deal with dynamic IP address via `sudo vi /var/www/html/wp-config.php`.
 ```
 $ sudo vi /var/www/html/wp-config.php
 ```
@@ -560,6 +560,12 @@ with:
 26 define( 'DB_USER', '<username-2>' );^M
 29 define( 'DB_PASSWORD', '<password-2>' );^M
 ```
+And add these lines:
+```
+define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] );^M
+define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST']) );^M
+```
+Note: HTTP_HOST is created dynamically by PHP based on the value of the HTTP HOST Header in the request.
 
 #### Step 5: Configuring Lighttpd
 Enable below modules via `sudo lighty-enable-mod fastcgi; sudo lighty-enable-mod fastcgi-php; sudo service lighttpd force-reload`.
