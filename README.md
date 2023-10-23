@@ -122,9 +122,9 @@ Install *sudo* via `apt install sudo`.
 ```
 # apt install sudo
 ```
-Verify whether *sudo* was successfully installed via `dpkg -l | grep sudo`.
+Verify whether *sudo* was successfully installed via `apt-cache policy sudo`.
 ```
-# dpkg -l | grep sudo
+# apt-cache policy sudo
 ```
 
 ### Step 2: Adding User to *sudo* Group
@@ -201,9 +201,9 @@ Install *openssh-server* via `sudo apt install openssh-server`.
 ```
 $ sudo apt install openssh-server
 ```
-Verify whether *openssh-server* was successfully installed via `dpkg -l | grep ssh`.
+Verify whether *openssh-server* was successfully installed via `apt-cache policy ssh`.
 ```
-$ dpkg -l | grep ssh
+$ apt-cache policy ssh
 ```
 Configure SSH via `sudo vi /etc/ssh/sshd_config`.
 ```
@@ -239,9 +239,9 @@ Install *ufw* via `sudo apt install ufw`.
 ```
 $ sudo apt install ufw
 ```
-Verify whether *ufw* was successfully installed via `dpkg -l | grep ufw`.
+Verify whether *ufw* was successfully installed via `apt-cache policy ufw`.
 ```
-$ dpkg -l | grep ufw
+$ apt-cache policy ufw
 ```
 Enable Firewall via `sudo ufw enable`.
 ```
@@ -305,9 +305,9 @@ Secondly, to set up policies in relation to password strength, install the *libp
 ```
 $ sudo apt install libpam-pwquality
 ```
-Verify whether *libpam-pwquality* was successfully installed via `dpkg -l | grep libpam-pwquality`.
+Verify whether *libpam-pwquality* was successfully installed via `apt-cache policy libpam-pwquality`.
 ```
-$ dpkg -l | grep libpam-pwquality
+$ apt-cache policy libpam-pwquality
 ```
 Configure password strength policy via `sudo vi /etc/pam.d/common-password`, specifically the below line:
 ```
@@ -435,9 +435,9 @@ Install *lighttpd* via `sudo apt install lighttpd`.
 ```
 $ sudo apt install lighttpd
 ```
-Verify whether *lighttpd* was successfully installed via `dpkg -l | grep lighttpd`.
+Verify whether *lighttpd* was successfully installed via `apt-cache policy lighttpd`.
 ```
-$ dpkg -l | grep lighttpd
+$ apt-cache policy lighttpd
 ```
 Allow incoming connections using Port 80 via `sudo ufw allow 80`.
 ```
@@ -449,9 +449,9 @@ Install *mariadb-server* via `sudo apt install mariadb-server`.
 ```
 $ sudo apt install mariadb-server
 ```
-Verify whether *mariadb-server* was successfully installed via `dpkg -l | grep mariadb-server`.
+Verify whether *mariadb-server* was successfully installed via `apt-cache policy mariadb-server`.
 ```
-$ dpkg -l | grep mariadb-server
+$ apt-cache policy mariadb-server
 ```
 Start interactive script to remove insecure default settings via `sudo mysql_secure_installation`.
 ```
@@ -510,9 +510,9 @@ Install *php-cgi* & *php-mysql* via `sudo apt install php-cgi php-mysql`.
 ```
 $ sudo apt install php-cgi php-mysql
 ```
-Verify whether *php-cgi* & *php-mysql* was successfully installed via `dpkg -l | grep php`.
+Verify whether *php-cgi* & *php-mysql* was successfully installed via `apt-cache policy php`.
 ```
-$ dpkg -l | grep php
+$ apt-cache policy php
 ```
 
 #### Step 4: Downloading & Configuring WordPress
@@ -582,9 +582,9 @@ Install FTP via `sudo apt install vsftpd`.
 ```
 $ sudo apt install vsftpd
 ```
-Verify whether *vsftpd* was successfully installed via `dpkg -l | grep vsftpd`.
+Verify whether *vsftpd* was successfully installed via `apt-cache policy vsftpd`.
 ```
-$ dpkg -l | grep vsftpd
+$ apt-cache policy vsftpd
 ```
 Allow incoming connections using Port 21 via `sudo ufw allow 21`.
 ```
